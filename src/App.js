@@ -1,9 +1,10 @@
 import './App.css';
+import BlockCounter from './components/BlockCounter';
 
 function App() {
   return (
     <>
-    <p>Initial</p>
+    <BlockCounter/>
     </>
   );
 }
