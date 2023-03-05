@@ -1,0 +1,28 @@
+@use "/src/common/styles/colors" as *;
+@use "/src/common/styles/_breackpoints" as bp;
+@use "/src/common/styles/mixins" as mx;
+$r: 8px;
+
+.container {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    @include mx.flex(flex, center, center);
+
+    .text {
+        font-size: 25px;
+        margin: 20px;
+    }
+
+    .btn {
+        margin: 5px;
+        padding: 8px;
+        font-size: 16px;
+
+        border: none;
+        border-radius: $r;
+
+        color: $color-text;
+    }
+}

@@ -1,5 +1,9 @@
-
-.btn{
-  width: 60px;
-  height: 20;
+.block {
+    padding: 20px;
+    text-align: center;
+}
+.btn {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
 }

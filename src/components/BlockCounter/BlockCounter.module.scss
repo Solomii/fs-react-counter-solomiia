@@ -1,0 +1,26 @@
+@use "/src/common/styles/colors" as *;
+@use "/src/common/styles/_breackpoints" as bp;
+@use "/src/common/styles/mixins" as mx;
+$r:10px;
+
+.box{
+  width: 50%;
+  margin: 50px auto;
+  padding: 50px;
+
+  @include mx.flex(flex,center, center);
+  flex-direction: column;
+ 
+  border-radius:$r;
+
+  background-color: $color-main;
+  color: $color-text;
+
+  .input {
+    margin: 20px;
+    padding: 10px;
+    border:none;
+
+    border-radius:$r;
+  }
+}

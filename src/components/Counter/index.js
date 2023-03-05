@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import styles from "./Counter.module.scss";
 
 class Counter extends Component {
     constructor(props) {
@@ -17,23 +19,31 @@ class Counter extends Component {
         const { isAdd } = this.state;
         this.setState({ isAdd: !isAdd });
     };
+
     render() {
         const { step } = this.props;
-        const { count } = this.state;
+        const { count, isAdd } = this.state;
 
         return (
-            <div>
-                Counter : {count}
-                <br />
-                {/* за станом змінювати кновку  */}
-                <button className="btn" onClick={this.stepCount}>
-                    +/-
+            <div className={styles.container}>
+                <h2 className={styles.text}>Counter : {count}</h2>
+                <button className={styles.btn} onClick={this.stepCount}>
+                    {isAdd ? "Add" : "Negative"}
                 </button>
-                {/* по кліку  змінювати стан  isAdd  */}
-                <button onClick={this.handlerChangeMode}>change mode</button>
+                <button className={styles.btn} onClick={this.handlerChangeMode}>
+                    change mode
+                </button>
             </div>
         );
     }
 }
+
+Counter.defaultProps = {
+    step: "0",
+};
+
+Counter.propTypes = {
+    step: PropTypes.number.isRequired,
+};
 
 export default Counter;
