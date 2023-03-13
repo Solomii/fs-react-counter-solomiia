@@ -11,8 +11,11 @@ class Counter extends Component {
         };
     }
     stepCount = () => {
-        const { isAdd, count } = this.state;
-        this.setState({ count: isAdd ? count + 1 : count - 1 });
+        const { step } = this.props;
+        const { isAdd, count} = this.state;
+        if (step >= 1 && step < 1000000) {
+            this.setState({ count: isAdd ? count + step : count - step });
+        }
     };
 
     handlerChangeMode = () => {
@@ -21,12 +24,11 @@ class Counter extends Component {
     };
 
     render() {
-        const { step } = this.props;
         const { count, isAdd } = this.state;
 
         return (
             <div className={styles.container}>
-                <h2 className={styles.text}>Counter : {count}</h2>
+                <h2 className={styles.text}>Counter: {count}</h2>
                 <button className={styles.btn} onClick={this.stepCount}>
                     {isAdd ? "Add" : "Negative"}
                 </button>
